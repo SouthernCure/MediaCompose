@@ -1,6 +1,7 @@
 # Media Server Compose
 
 This Docker compose will install the following:
+
 **Currently Implemented**
 - Qbittorent
 - Jellyfin
