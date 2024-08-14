@@ -6,10 +6,8 @@ This Docker compose will install the following:
 - Jellyfin
 - JellySeerr
 - Homarr
-- Radarr
-
-**To be implemented**
-- Sonarr
 - Prowlarr
+- Radarr
+- Sonarr
 
 Homarr will be set to port 80 so it will automatically open when searching the IP
