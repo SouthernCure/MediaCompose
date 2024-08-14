@@ -7,6 +7,7 @@ This Docker compose will install the following:
 - JellySeerr
 - Homarr
 - Radarr
+
 **To be implemented**
 - Sonarr
 - Prowlarr
