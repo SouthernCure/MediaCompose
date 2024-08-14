@@ -1,0 +1,113 @@
+########################################################################################################
+##  Media Server Compose - This docker compose file is meant to create a stack on a single network    ##
+##  and should be ran all at once. Personally, I run this in portainer which I recommend using.       ##
+########################################################################################################
+
+# To change the port the service will open on, change the FIRST port in 1234:1234
+# Example, 1234:1234 ----> 4324:1234
+
+version: '3'
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+      - ./homarr/data:/data
+    ports:
+      - '80:7575'
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
+    volumes:
+      - /path/to/qbittorrent/appdata:/config
+      - /path/to/downloads:/downloads #optional
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+
+  jellyfin:
+    image: ghcr.io/linuxserver/jellyfin
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+      - JELLYFIN_PublishedServerUrl=192.168.0.5 #optional
+    volumes:
+    # Will create a driectory for the following:
+      - /srv/dev-disk-by-label-NAS/Config/Jellyfin:/config
+      - /srv/dev-disk-by-label-NAS/Data/Series:/tv
+      - /srv/dev-disk-by-label-NAS/Data/Movies:/movies
+      - /srv/dev-disk-by-label-NAS/Data/Music:/music
+      - /opt/vc/lib:/opt/vc/lib #optional
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+
+  jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       environment:
+            - LOG_LEVEL=debug
+            - TZ=Asia/Tashkent
+       ports:
+            - 5055:5055
+       volumes:
+            - /path/to/appdata/config:/app/config
+       restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/prowlarr/data:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/radarr/data:/config
+      - /path/to/movies:/movies #optional
+      - /path/to/download-client-downloads:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/sonarr/data:/config
+      - /path/to/tvseries:/tv #optional
+      - /path/to/downloadclient-downloads:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
