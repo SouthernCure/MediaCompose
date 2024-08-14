@@ -20,4 +20,4 @@ Homarr will be set to port 80 so it will automatically open when searching the I
 
 Run the following command into a fresh ubuntu installation without docker
 
-```sudo curl -s https://github.com/SouthernCure/MediaCompose/releases/download/v0.1.0-alpha/Install_docker_and_portainer.sh | bash```
+```wget -O - https://github.com/SouthernCure/MediaCompose/releases/download/v0.1.0-alpha/Install_docker_and_portainer.sh | bash```
