@@ -10,7 +10,7 @@ services:
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - /mnt/mediaserver/data/torrents:/data/torrents/
+      - /home/southerncure/data/torrents:/data/torrents/
     ports:
       - 8080:8080
       - 6881:6881
@@ -24,9 +24,9 @@ services:
     image: ghcr.io/ajnart/homarr:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
-      - /mnt/mediaserver/data/arrs/homarr/configs:/app/data/configs
-      - /mnt/mediaserver/data/arrs/homarr/icons:/app/public/icons
-      - /mnt/mediaserver/data/arrs/homarr/data:/data
+      - /home/southerncure/data/arrs/homarr/configs:/app/data/configs
+      - /home/southerncure/data/arrs/homarr/icons:/app/public/icons
+      - /home/southerncure/data/arrs/homarr/data:/data
     ports:
       - 80:7575 # Sets 80 to route to 7575 so Homarr opens by default
     networks:
@@ -41,7 +41,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /mnt/mediaserver/data/media:/data/media/
+      - /home/southerncure/data/media:/data/media/
     ports:
       - 8096:8096
     networks:
@@ -69,7 +69,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /mnt/mediaserver/data:/data/
+      - /home/southerncure/data:/data/
     ports:
       - 7878:7878
     networks:
@@ -84,7 +84,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /mnt/mediaserver/data:/data
+      - /home/southerncure/data:/data
     ports:
       - 8989:8989
     networks:
@@ -99,7 +99,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - /mnt/mediaserver/data/arrs/jellyseerr/configs:/app/config
+      - /home/southerncure/data/arrs/jellyseerr/configs:/app/config
     ports:
       - 5055:5055
     networks:
