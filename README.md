@@ -12,6 +12,10 @@ This Docker compose will install the following:
 
 # Notes
 - Homarr will be on port 80 (default port)
+- On first startup user will have to manually enter the jellyfin wizard installer
+http://host:port/web/index.html#!/wizardstart.html
+- If you use cloudflare you will need FlareSolverr to use Prowlerr
+https://hub.docker.com/r/flaresolverr/flaresolverr
 
 # Setup Instructions
 
