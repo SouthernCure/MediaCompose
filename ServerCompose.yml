@@ -31,6 +31,8 @@ services:
       - 8080:8080
       - 6881:6881
       - 6881:6881/udp
+    networks:
+      - media_network
     restart: unless-stopped
 
   homarr:
@@ -43,6 +45,8 @@ services:
       - /var/lib/docker/volumes/collection_manager/homarr/homarr_data:/data
     ports:
       - 80:7575 # Sets 80 to route to 7575 so Homarr opens by default
+    networks:
+      - media_network
     restart: unless-stopped
 
   jellyfin:
@@ -57,6 +61,8 @@ services:
       - /var/lib/docker/volumes/jellyfin_media/jellyfin_music:/music
     ports:
       - 8096:8096
+    networks:
+      - media_network
     restart: unless-stopped
 
   prowlarr:
@@ -67,6 +73,8 @@ services:
       - /var/lib/docker/volumes/collection_manager/prowlarr/config:/config
     ports:
       - 9696:9696
+    networks:
+      - media_network
     restart: unless-stopped
 
   radarr:
@@ -80,6 +88,8 @@ services:
       - /var/lib/docker/volumes/jellyfin_media/qbdownloads:/downloads
     ports:
       - 7878:7878
+    networks:
+      - media_network
     restart: unless-stopped
 
   sonarr:
@@ -93,6 +103,8 @@ services:
       - /var/lib/docker/volumes/jellyfin_media/qbdownloads:/downloads
     ports:
       - 8989:8989
+    networks:
+      - media_network
     restart: unless-stopped
 
   jellyseerr:
@@ -100,8 +112,10 @@ services:
     image: fallenbagel/jellyseerr:latest
     environment:
       - TZ=America/New_York
-    ports:
-      - 5055:5055
     volumes:
       - /var/lib/docker/volumes/collection_manager/jellyseerr/config:/app/config
+    ports:
+      - 5055:5055
+    networks:
+      - media_network
     restart: unless-stopped
