@@ -17,8 +17,89 @@
 
 version "3":
 services:
-  Qbittorent:
+  qbittorrent:
+    container_name: qBittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
+    environment:
+      - TZ=America/New_York
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
+    volumes:
+      - /var/lib/docker/volumes/collection_manager/qbittorrent/appdata:/config
+      - /var/lib/docker/volumes/jellyfin_media/qbdownloads:/downloads
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
 
-  Homarr:
+  homarr:
+    container_name: Homarr
+    image: ghcr.io/ajnart/homarr:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - /var/lib/docker/volumes/collection_manager/homarr/configs:/app/data/configs
+      - /var/lib/docker/volumes/collection_manager/homarr/icons:/app/public/icons
+      - /var/lib/docker/volumes/collection_manager/homarr/homarr_data:/data
+    ports:
+      - 80:7575 # Sets 80 to route to 7575 so Homarr opens by default
 
-  
+  jellyfin:
+    container_name: Jellyfin
+    image: ghcr.io/linuxserver/jellyfin:latest
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - /var/lib/docker/volumes/jellyfin_media/jellyfin_config:/config
+      - /var/lib/docker/volumes/jellyfin_media/jellyfin_tv:/tv
+      - /var/lib/docker/volumes/jellyfin_media/jellyfin_movies:/movies
+      - /var/lib/docker/volumes/jellyfin_media/jellyfin_music:/music
+    ports:
+      - 8096:8096
+
+  prowlarr:
+    container_name: prowlarr
+    image: lscr.io/linuxserver/prowlarr:latest
+    environment:
+      - TZ=America/New_York
+      - /var/lib/docker/volumes/collection_manager/prowlarr/config:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+
+  radarr:
+    container_name: Radarr
+    image: lscr.io/linuxserver/radarr:latest
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - /var/lib/docker/volumes/collection_manager/radarr/config:/config
+      - /var/lib/docker/volumes/jellyfin_media/jellyfin_movies:/movies
+      - /var/lib/docker/volumes/jellyfin_media/qbdownloads:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  sonarr:
+    container_name: Sonarr
+    image: lscr.io/linuxserver/sonarr:latest
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - /var/lib/docker/volumes/collection_manager/sonarr/config:/config
+      - /var/lib/docker/volumes/jellyfin_media/jellyfin_tv:/tv
+      - /var/lib/docker/volumes/jellyfin_media/qbdownloads:/downloads
+    ports:
+      - 8989:8989
+    restart: unless_stopped
+
+  jellyseerr:
+    container_name: Jellyseerr
+    image: fallenbagel/jellyseerr:latest
+    environment:
+      - TZ=America/New_York
+    ports:
+      - 5055:5055
+    volumes:
+      - /var/lib/docker/volumes/collection_manager/jellyseerr/config:/app/config
+    restart: unless_stopped
