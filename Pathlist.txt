@@ -1,0 +1,22 @@
+Starting dir: /mnt/mediaserver/data
+
+data
+├── torrents
+│   ├── books
+│   ├── movies
+│   ├── music
+│   └── tv
+├── usenet
+│   ├── incomplete
+│   └── complete
+│       ├── books
+│       ├── movies
+│       ├── music
+│       └── tv
+└── media
+    ├── books
+    ├── movies
+    ├── music
+    └── tv
+
+This represents the paths that will be used for the mediaserver
