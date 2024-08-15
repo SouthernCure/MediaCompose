@@ -2,8 +2,7 @@
 
 This Docker compose will install the following:
 
-**Currently Implemented**
-- Qbittorent
+- Qbittorrent
 - Jellyfin
 - JellySeerr
 - Homarr
@@ -11,8 +10,8 @@ This Docker compose will install the following:
 - Radarr
 - Sonarr
 
-Homarr will be set to port 80 so it will automatically open when searching the IP
-
+# Notes
+- Homarr will be on port 80 (default port)
 
 # Setup Instructions
 
