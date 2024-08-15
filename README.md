@@ -44,3 +44,7 @@ Install Portainer
 ```sudo docker volume create portainer```
 
 ```sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer:/data portainer/portainer-ce:latest```
+
+
+Install Required directorys
+curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/f4a5bdc5db67aef95cf218250fdbd3c702b35e87/pathcreation.sh | bash
