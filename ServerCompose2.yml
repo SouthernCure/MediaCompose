@@ -88,7 +88,7 @@ services:
     environment:
       - TZ=America/New_York
     volumes:
-      - :/app/config # TO BE FIXED !!!!!!!!!!!!!!!!!!!!!
+      - /mnt/mediaserver/data/arrs/jellyseerr/configs:/app/config
     ports:
       - 5055:5055
     networks:
@@ -101,4 +101,4 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/16
-          gateway: 172.20.0.1
+          gateway: 172.23.0.1
