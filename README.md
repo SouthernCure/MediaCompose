@@ -24,6 +24,7 @@ https://hub.docker.com/r/flaresolverr/flaresolverr
 Fresh Ubuntu Installation
 
 Docker + Docker compose quick setup
+
 ```sudo curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/main/dockerinstaller.sh | bash```
 
 Install Docker (If you didnt run quick setup)
