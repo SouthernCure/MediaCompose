@@ -65,14 +65,11 @@ See https://github.com/SouthernCure/MediaCompose/blob/main/Pathlist.txt to visua
 
 ```sudo curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/main/pathcreation.sh | bash```
 
-Recursively chown user and group and Recursively chmod to 775/664
-
-```sudo chown -R $USER:$USER /mnt/mediaserver/data```
-
-```sudo chmod -R a=,a+rX,u+w,g+w /mnt/mediaserver/data```
-
 Run docker-compose.yml
 
+```curl https://raw.githubusercontent.com/SouthernCure/MediaCompose/main/docker-compose.yml -O docker-compose.yml```
+
+```docker-compose up```
 
 Install Portainer
 
