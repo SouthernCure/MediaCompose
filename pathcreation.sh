@@ -34,6 +34,3 @@ sudo mkdir -p /home/southerncure/data/media/books
 sudo mkdir -p /home/southerncure/data/media/movies
 sudo mkdir -p /home/southerncure/data/media/music
 sudo mkdir -p /home/southerncure/data/media/tv
-
-sudo chown -R $USER:$USER /home/$USER/data
-sudo chmod -R a=,a+rX,u+w,g+w /home/$USER/data
