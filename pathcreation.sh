@@ -34,3 +34,6 @@ sudo mkdir -p /home/user/data/media/books
 sudo mkdir -p /home/user/data/media/movies
 sudo mkdir -p /home/user/data/media/music
 sudo mkdir -p /home/user/data/media/tv
+
+sudo chown -R $USER:$USER /home/user/data
+sudo chmod -R a=,a+rX,u+w,g+w /home/user/data
