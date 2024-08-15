@@ -7,7 +7,9 @@
     │   │   └── /icons
     │   ├── /radarr
     │   │   └── /configs
-    │   └── /sonarr
+    │   ├── /sonarr
+    │   │   └── /configs
+    │   └── /jellyseerr
     │       └── /configs
     ├── /torrents
     │   ├── /books
