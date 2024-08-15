@@ -3,6 +3,16 @@
 sudo mkdir -p /mnt/mediaserver
 sudo mkdir -p /mnt/mediaserver/data
 
+sudo mkdir -p /mnt/mediaserver/data/arrs
+sudo mkdir -p /mnt/mediaserver/data/arrs/homarr
+sudo mkdir -p /mnt/mediaserver/data/arrs/homarr/configs
+sudo mkdir -p /mnt/mediaserver/data/arrs/homarr/data
+sudo mkdir -p /mnt/mediaserver/data/arrs/homarr/icons
+sudo mkdir -p /mnt/mediaserver/data/arrs/radarr
+sudo mkdir -p /mnt/mediaserver/data/arrs/radarr/configs
+sudo mkdir -p /mnt/mediaserver/data/arrs/sonarr
+sudo mkdir -p /mnt/mediaserver/data/arrs/sonarr/configs
+
 sudo mkdir -p /mnt/mediaserver/data/torrents
 sudo mkdir -p /mnt/mediaserver/data/torrents/books
 sudo mkdir -p /mnt/mediaserver/data/torrents/movies
