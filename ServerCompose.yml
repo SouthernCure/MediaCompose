@@ -43,6 +43,7 @@ services:
       - /var/lib/docker/volumes/collection_manager/homarr/homarr_data:/data
     ports:
       - 80:7575 # Sets 80 to route to 7575 so Homarr opens by default
+    restart: unless-stopped
 
   jellyfin:
     container_name: Jellyfin
@@ -56,6 +57,7 @@ services:
       - /var/lib/docker/volumes/jellyfin_media/jellyfin_music:/music
     ports:
       - 8096:8096
+    restart: unless-stopped
 
   prowlarr:
     container_name: prowlarr
@@ -91,7 +93,7 @@ services:
       - /var/lib/docker/volumes/jellyfin_media/qbdownloads:/downloads
     ports:
       - 8989:8989
-    restart: unless_stopped
+    restart: unless-stopped
 
   jellyseerr:
     container_name: Jellyseerr
@@ -102,4 +104,4 @@ services:
       - 5055:5055
     volumes:
       - /var/lib/docker/volumes/collection_manager/jellyseerr/config:/app/config
-    restart: unless_stopped
+    restart: unless-stopped
