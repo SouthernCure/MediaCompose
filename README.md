@@ -50,4 +50,4 @@ Install Required directorys
 
 See https://github.com/SouthernCure/MediaCompose/blob/main/Pathlist.txt to visualze the directorys
 
-```sudo curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/fa08b23c3c076c93fbe18090b051d49750c1d00b/pathcreation.sh | bash```
+```sudo curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/main/pathcreation.sh | bash```
