@@ -9,7 +9,7 @@ services:
       - TORRENTING_PORT=6881
     volumes:
       - :/config
-      - :/downloads
+      - /mnt/mediaserver/data/torrents:/data/torrents/
     ports:
       - 8080:8080
       - 6881:6881
@@ -23,9 +23,9 @@ services:
     image: ghcr.io/ajnart/homarr:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
-      - :/app/data/configs
-      - :/app/public/icons
-      - :/data
+      - /mnt/mediaserver/data/arrs/homarr/configs:/app/data/configs
+      - /mnt/mediaserver/data/arrs/homarr/icons:/app/public/icons
+      - /mnt/mediaserver/data/arrs/homarr/data:/data
     ports:
       - 80:7575 # Sets 80 to route to 7575 so Homarr opens by default
     networks:
@@ -38,9 +38,7 @@ services:
     environment:
       - TZ=America/New_York
     volumes:
-      - :/tv
-      - :/movies
-      - :/music
+      - /mnt/mediaserver/data/media:/data/media/
     ports:
       - 8096:8096
     networks:
@@ -64,9 +62,7 @@ services:
     environment:
       - TZ=America/New_York
     volumes:
-      - :/config
-      - :/movies
-      - :/downloads
+      - /mnt/mediaserver/data:/data/
     ports:
       - 7878:7878
     networks:
@@ -79,9 +75,7 @@ services:
     environment:
       - TZ=America/New_York
     volumes:
-      - :/config
-      - :/tv
-      - :/downloads
+      - /mnt/mediaserver/data:/data
     ports:
       - 8989:8989
     networks:
@@ -94,7 +88,7 @@ services:
     environment:
       - TZ=America/New_York
     volumes:
-      - :/app/config
+      - :/app/config # TO BE FIXED !!!!!!!!!!!!!!!!!!!!!
     ports:
       - 5055:5055
     networks:
