@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USER="southerncure"
+
 sudo mkdir -p /home/$USER
 sudo mkdir -p /home/$USER/data
 
