@@ -47,4 +47,4 @@ Install Portainer
 
 
 Install Required directorys
-curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/f4a5bdc5db67aef95cf218250fdbd3c702b35e87/pathcreation.sh | bash
+```sudo curl -s https://raw.githubusercontent.com/SouthernCure/MediaCompose/e57b07c792382964f56da4a00a05dfc728892ac1/pathcreation.sh | bash```
