@@ -12,6 +12,8 @@ sudo mkdir -p /mnt/mediaserver/data/arrs/radarr
 sudo mkdir -p /mnt/mediaserver/data/arrs/radarr/configs
 sudo mkdir -p /mnt/mediaserver/data/arrs/sonarr
 sudo mkdir -p /mnt/mediaserver/data/arrs/sonarr/configs
+sudo mkdir -p /mnt/mediaserver/data/arrs/jellyseerr
+sudo mkdir -p /mnt/mediaserver/data/arrs/jellyseerr/configs
 
 sudo mkdir -p /mnt/mediaserver/data/torrents
 sudo mkdir -p /mnt/mediaserver/data/torrents/books
