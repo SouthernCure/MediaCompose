@@ -15,7 +15,7 @@
 ##           |__/                                                         ##
 ############################################################################
 
-version "3":
+version: '3'
 services:
   qbittorrent:
     container_name: qBittorrent
