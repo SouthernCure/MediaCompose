@@ -1,34 +1,30 @@
-Starting dir: /mnt/mediaserver/data
+/mnt/mediaserver
+└── /data
+    ├── /arrs
+    │   ├── /homarr
+    │   │   ├── /configs
+    │   │   ├── /data
+    │   │   └── /icons
+    │   ├── /radarr
+    │   │   └── /configs
+    │   └── /sonarr
+    │       └── /configs
+    ├── /torrents
+    │   ├── /books
+    │   ├── /movies
+    │   ├── /music
+    │   └── /tv
+    ├── /usenet
+    │   ├── /incomplete
+    │   └── /complete
+    │       ├── /books
+    │       ├── /movies
+    │       ├── /music
+    │       └── /tv
+    └── /media
+        ├── /books
+        ├── /movies
+        ├── /music
+        └── /tv
 
-data
-│
-├── arrs
-│   ├── homarr
-│   │    ├── configs
-│   │    ├── data
-│   │    └── icons
-│   ├── radarr
-│   │    └── configs
-│   │
-│   └── sonarr
-│        └── configs
-│
-├── torrents
-│   ├── books
-│   ├── movies
-│   ├── music
-│   └── tv
-├── usenet
-│   ├── incomplete
-│   └── complete
-│       ├── books
-│       ├── movies
-│       ├── music
-│       └── tv
-└── media
-    ├── books
-    ├── movies
-    ├── music
-    └── tv
-
-This represents the paths that will be used for the mediaserver
+This represents the paths that will be used for pathcreation.sh
