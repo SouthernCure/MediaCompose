@@ -77,11 +77,11 @@ services:
     restart: unless-stopped
 
   sonarr:
-      - PUID=1000
-      - PGID=1000
     container_name: Sonarr
     image: lscr.io/linuxserver/sonarr:latest
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=America/New_York
     volumes:
       - /mnt/mediaserver/data:/data
@@ -92,11 +92,11 @@ services:
     restart: unless-stopped
 
   jellyseerr:
-      - PUID=1000
-      - PGID=1000
     container_name: Jellyseerr
     image: fallenbagel/jellyseerr:latest
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=America/New_York
     volumes:
       - /mnt/mediaserver/data/arrs/jellyseerr/configs:/app/config
@@ -112,4 +112,4 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/16
-          gateway: 172.20.0.1da
+          gateway: 172.20.0.1
