@@ -1,24 +1,24 @@
 #!/bin/bash
 
-mkdir -p /mnt/mediaserver
-mkdir -p /mnt/mediaserver/data
+sudo mkdir -p /mnt/mediaserver
+sudo mkdir -p /mnt/mediaserver/data
 
-mkdir -p /mnt/mediaserver/data/torrents
-mkdir -p /mnt/mediaserver/data/torrents/books
-mkdir -p /mnt/mediaserver/data/torrents/movies
-mkdir -p /mnt/mediaserver/data/torrents/music
-mkdir -p /mnt/mediaserver/data/torrents/tv
+sudo mkdir -p /mnt/mediaserver/data/torrents
+sudo mkdir -p /mnt/mediaserver/data/torrents/books
+sudo mkdir -p /mnt/mediaserver/data/torrents/movies
+sudo mkdir -p /mnt/mediaserver/data/torrents/music
+sudo mkdir -p /mnt/mediaserver/data/torrents/tv
 
-mkdir -p /mnt/mediaserver/data/usenet
-mkdir -p /mnt/mediaserver/data/usenet/incomplete
-mkdir -p /mnt/mediaserver/data/usenet/complete
-mkdir -p /mnt/mediaserver/data/usenet/complete/books
-mkdir -p /mnt/mediaserver/data/usenet/complete/movies
-mkdir -p /mnt/mediaserver/data/usenet/complete/music
-mkdir -p /mnt/mediaserver/data/usenet/complete/tv
+sudo mkdir -p /mnt/mediaserver/data/usenet
+sudo mkdir -p /mnt/mediaserver/data/usenet/incomplete
+sudo mkdir -p /mnt/mediaserver/data/usenet/complete
+sudo mkdir -p /mnt/mediaserver/data/usenet/complete/books
+sudo mkdir -p /mnt/mediaserver/data/usenet/complete/movies
+sudo mkdir -p /mnt/mediaserver/data/usenet/complete/music
+sudo mkdir -p /mnt/mediaserver/data/usenet/complete/tv
 
-mkdir -p /mnt/mediaserver/data/media
-mkdir -p /mnt/mediaserver/data/media/books
-mkdir -p /mnt/mediaserver/data/media/movies
-mkdir -p /mnt/mediaserver/data/media/music
-mkdir -p /mnt/mediaserver/data/media/tv
+sudo mkdir -p /mnt/mediaserver/data/media
+sudo mkdir -p /mnt/mediaserver/data/media/books
+sudo mkdir -p /mnt/mediaserver/data/media/movies
+sudo mkdir -p /mnt/mediaserver/data/media/music
+sudo mkdir -p /mnt/mediaserver/data/media/tv
