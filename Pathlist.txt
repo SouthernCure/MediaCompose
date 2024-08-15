@@ -5,8 +5,8 @@ data
 ├── arrs
 │   ├── homarr
 │   │    ├── configs
-│   │    ├── icons
-│   │    └── data
+│   │    ├── data
+│   │    └── icons
 │   ├── radarr
 │   │    └── configs
 │   │
